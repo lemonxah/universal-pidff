@@ -959,6 +959,8 @@ static int pidff_upload_effect(struct input_dev *dev, struct ff_effect *new,
 	pidff->block_load[PID_EFFECT_BLOCK_INDEX].value[0] =
 		pidff->effect[new->id].pid_id;
 
+  pidff->create_new_effect_type->value[0] = type_id;
+
 	PIDFF_SET_REPORT_IF_NEEDED(effect, new, old);
 	switch (new->type) {
 	case FF_CONSTANT:
